@@ -1,0 +1,48 @@
+name: Generate Contribution Snake
+
+on:
+  schedule:
+    # 每日 UTC 00:17（香港时间 08:17），避开整点调度高峰。
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/snake.yml"
+
+permissions: {}
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    # 仅允许默认分支的运行更新 output，避免其他分支覆盖图片。
+    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Generate light and dark snake animations
+        uses: Platane/snk/svg-only@v3.5.0
+        with:
+          github_user_name: ztzpro
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish snake animations to output branch
+        uses: crazy-max/ghaction-github-pages@v5.0.0
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: true
+          allow_empty_commit: false
+          jekyll: false
+          commit_message: "Update contribution snake animations"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
