@@ -10,7 +10,7 @@
 <!-- Profile statistics -->
 <p align="center">
   <img
-    src="https://github-stats-extended.vercel.app/api?username=ztzpro&show_icons=true&theme=default"
+    src="https://github-stats-extended.vercel.app/api?username=ztzpro&amp;show_icons=true&amp;theme=default&amp;role=OWNER,ORGANIZATION_MEMBER"
     alt="GitHub Stats"
     width="48%"
   />
