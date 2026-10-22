@@ -2,8 +2,8 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;size=30&amp;duration=2500&amp;pause=1200&amp;color=27F76A&amp;center=true&amp;vCenter=true&amp;width=600&amp;height=70&amp;lines=ztzpro;%E6%99%BA%E5%95%86%E7%84%97%E8%92%9F%E9%95%BF"
-    alt="ztzpro / 智商焗蒟长"
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;size=30&amp;duration=2500&amp;pause=1200&amp;color=27F76A&amp;center=true&amp;vCenter=true&amp;width=600&amp;height=70&amp;lines=ztzpro"
+    alt="ztzpro"
   />
 </p>
 
@@ -38,3 +38,4 @@
     />
   </picture>
 </p>
+
